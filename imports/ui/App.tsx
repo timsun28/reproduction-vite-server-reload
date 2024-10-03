@@ -3,7 +3,6 @@ import { Hello } from "/imports/ui/Hello";
 import { Info } from "/imports/ui/Info";
 import { testMessage } from "/imports/methods/links";
 import { Meteor } from "meteor/meteor";
-
 export const App = () => (
     <div>
         <h1>Welcome to Meteor!</h1>

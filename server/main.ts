@@ -1,17 +1,16 @@
 import { Meteor } from "meteor/meteor";
 import { LinksCollection } from "../imports/api/links";
-import { FileCollection } from "../imports/api/images";
 import "/imports/methods/links";
 import "/server/react-refresh.ts";
+import { FileCollection } from "/imports/api/images/server/images";
 
 async function insertLink({ title, url }: { title: string; url: string }) {
     await LinksCollection.insertAsync({ title, url, createdAt: new Date() });
 }
 
-
-
 Meteor.startup(async () => {
-    FileCollection.find();
+    const files = await FileCollection.find().fetchAsync();
+    console.log(files);
     // If the Links collection is empty, add some data.
     if ((await LinksCollection.find().countAsync()) === 0) {
         await insertLink({

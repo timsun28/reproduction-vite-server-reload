@@ -16,7 +16,7 @@ export default defineConfig({
                 ignorePackages: ["ostrio:files"],
             },
             meteorStubs: {
-                debug: false,
+                debug: true,
             },
         }),
         localZodernRelay({
