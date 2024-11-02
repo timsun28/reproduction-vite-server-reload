@@ -10,7 +10,6 @@ export default defineConfig({
         }),
         meteor({
             clientEntry: "client/main.tsx",
-            serverEntry: "server/main.ts",
             stubValidation: {
                 warnOnly: true,
                 ignorePackages: ["ostrio:files"],
